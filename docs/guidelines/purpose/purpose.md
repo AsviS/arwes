@@ -1,4 +1,4 @@
-Arwes intends to materialize futuristic science fiction and cyberpunk concepts
+Arwes intends to materialize opinionated futuristic science fiction concepts
 in a web toolset you may use to create user experiences inspired by advanced
 technology and alien engineering.
 
@@ -10,8 +10,6 @@ components for web applications from both design and functional perspectives
 is not easy. Since there are plenty of places from which we could draw
 inspiration, the concepts implemented in Arwes are opinionated and focused on
 certain experiential aspects.
-
-These are the main fundamental ideas behind this project:
 
 ## Advanced Alien Technology
 

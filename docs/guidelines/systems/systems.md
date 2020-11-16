@@ -1,28 +1,50 @@
-A system is a tree of nodes with only one parent.
+Arwes applications are rich in visual, animations, and sounds effects.
 
-Any node in a system can use animations for many purposes, as individual
-nodes or sub-systems of nodes.
+An animated, and audial UI application can be structured as a tree of nodes.
 
-A node can be animated or not. An animated node should animate its children.
-A non-animated node should not animate its children.
+An Arwes system is a tree of nodes with one root node.
 
-If a node is animated, it can play sounds. Otherwise, it should not play sounds.
+A root node can be controlled to be animated and play sounds programmatically.
+A child node in a system has its animations and sounds controlled by its parent
+node.
 
-When multiple nodes play the same sound at the same time, the sound can be played
-only once. If a sound is playing and another node tries to play it again,
-the sound restarts.
+If a child node becomes a root, then it becomes independent from its parent and
+it creates a new system.
+
+A node represents an individual UI component with animations and optionally sounds.
+
+![Systems of nodes](./systems-of-nodes.jpg)
+
+By default, a root node is animated and audible. A root node with enabled animations
+and sounds also enables them to its children nodes. If a root node has animations
+and sounds disabled, then its children nodes will also have them disabled.
+
+A system of nodes should be able to work with animations enabled and disabled.
+
+Only if a node is animated, it can play sounds.
+
+Any node in a system can use animations and sounds for many purposes.
+
+If multiple nodes in a system play the same sound at the same time, the sound
+should be played only once.
+
+If a sound is playing and another node tries to play it again, the sound should
+restarts.
 
 ## Transitions
 
-When an node transitions in the system, it should be assembled. It should
-feel as being created part by part. A simple line will start as a point and
-get its final length over a short period of time. Opacity can be used from 0 to 1
-while animating but should last very short in the beginning of the animation.
+A node can have multiple animation states. The node can transition from one state
+to another with animations and sounds.
 
-When a node transitions out of the system, it should be disassembled. It should
-feel as if it is being unmounted part by part. A simple line will shrink until
-it is a point in a short period of time. Opacity can be used from 1 to 0 while
-animating, but should last very short at the end of the animation.
+When an node transitions in, it should be assembled. It should feel as being
+created part by part. A simple line will start as a point and get its final length
+over a short period of time. Opacity can be used from 0 to 1 while animating but
+should last very short in the beginning of the animation.
+
+When a node transitions out, it should be disassembled. It should feel as if it
+is being unmounted part by part. A simple line will shrink until it is a point
+in a short period of time. Opacity can be used from 1 to 0 while animating,
+but should last very short at the end of the animation.
 
 Nodes transitioning in and out can have a sound effect lasting the time the
 animations take.
